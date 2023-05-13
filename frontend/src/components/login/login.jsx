@@ -31,7 +31,7 @@ const LoginPage = () => {
 				Login
 			</Typography>
 			<form
-				action=""
+				action="../../../../backend/log.php"
 				method="POST">
 				<Grid
 					container
