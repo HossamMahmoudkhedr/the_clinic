@@ -1,0 +1,18 @@
+.headerContent h1 {
+	color: var(--blue);
+}
+
+header .links {
+	display: flex;
+	gap: 3rem;
+}
+
+header .links li {
+	color: var(--text-main-color);
+	font-weight: 500;
+	transition: all 0.3s linear;
+}
+
+header .links li:hover {
+	color: var(--blue);
+}

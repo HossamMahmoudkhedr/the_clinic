@@ -1,0 +1,19 @@
+footer {
+	background-color: black;
+	color: white;
+	padding: 2rem 4rem;
+	margin-top: 4rem;
+}
+footer .links ul {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+footer .links ul li {
+	cursor: pointer;
+}
+
+footer br {
+	color: white;
+	background-color: white;
+}
