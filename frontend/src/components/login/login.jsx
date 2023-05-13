@@ -31,8 +31,6 @@ const LoginPage = () => {
 	});
 
 	const handleSubmit = (event) => {
-		event.preventDefault();
-
 		fetch('backend/log.php', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -56,7 +54,7 @@ const LoginPage = () => {
 			</Typography>
 			<form
 				onSubmit={handleSubmit}
-				action=""
+				action="../../../../backend/log.php"
 				method="POST">
 				<Grid
 					container
