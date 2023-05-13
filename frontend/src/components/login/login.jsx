@@ -55,12 +55,8 @@ const LoginPage = () => {
 				Login
 			</Typography>
 			<form
-<<<<<<< HEAD
-				action=""
-=======
 				onSubmit={handleSubmit}
 				action=""
->>>>>>> c56af2244b717fa148fa02025a84405b28dce0b7
 				method="POST">
 				<Grid
 					container
