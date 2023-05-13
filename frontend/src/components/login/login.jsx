@@ -20,8 +20,32 @@ const LoginPage = () => {
 	const [passHelper, setPassHelper] = useState('');
 	// const [nameError, setNameError] = useState();
 
-	const handleChange = (event) => {
+	const handleChangee = (event) => {
 		setValue(event.target.value);
+	};
+
+	const [formData, setFormData] = useState({
+		name: '',
+		password: '',
+		message: '',
+	});
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+
+		fetch('backend/log.php', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(formData),
+		})
+			.then((response) => response.json())
+			.then((data) => console.log(data))
+			.catch((error) => console.error(error));
+	};
+
+	const handleChange = (event) => {
+		const { name, value } = event.target;
+		setFormData({ ...formData, [name]: value });
 	};
 	return (
 		<Box className="login">
@@ -31,7 +55,12 @@ const LoginPage = () => {
 				Login
 			</Typography>
 			<form
-				action="../../../../backend/log.php"
+<<<<<<< HEAD
+				action=""
+=======
+				onSubmit={handleSubmit}
+				action=""
+>>>>>>> c56af2244b717fa148fa02025a84405b28dce0b7
 				method="POST">
 				<Grid
 					container
@@ -43,7 +72,11 @@ const LoginPage = () => {
 							type={'text'}
 							error={nameError}
 							labelName={'User Name'}
-							restProps={{ name: 'user_name', helperText: userHelper }}
+							restProps={{
+								name: 'user_name',
+								helperText: userHelper,
+								onchange: handleChange,
+							}}
 						/>
 					</Grid>
 					<Grid
@@ -53,7 +86,11 @@ const LoginPage = () => {
 							error={passError}
 							type={'password'}
 							labelName={'Password'}
-							restProps={{ name: 'password', helperText: passHelper }}
+							restProps={{
+								name: 'password',
+								helperText: passHelper,
+								onchange: handleChange,
+							}}
 						/>
 					</Grid>
 					<Grid
@@ -65,7 +102,7 @@ const LoginPage = () => {
 							dir="row"
 							name="type"
 							value={value}
-							onChange={handleChange}>
+							onChange={handleChangee}>
 							<FormControlLabel
 								value="patient"
 								control={<Radio />}
