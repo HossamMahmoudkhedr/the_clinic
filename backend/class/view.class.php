@@ -17,7 +17,7 @@ class view extends user
         $_SESSION['username']=$user_name;
         $_SESSION['type']=$accout_type;
         setcookie("logininfo",$accout_type,time()+3600*2,"/");
-        header("Location:../ho.html");
+        header("Location:../../../../frontend/src/components/fullPage/fullPage.jsx");
     }
     public function paient_info($user_name)
     {

@@ -31,7 +31,7 @@ const LoginPage = () => {
 	});
 
 	const handleSubmit = (event) => {
-		fetch('backend/log.php', {
+		fetch('http://localhost/backend/log.php', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(formData),
@@ -54,7 +54,7 @@ const LoginPage = () => {
 			</Typography>
 			<form
 				onSubmit={handleSubmit}
-				action="../../../../backend/log.php"
+				action="http://localhost/php%20projects/oop/swproject/the_clinic/backend/log.php"
 				method="POST">
 				<Grid
 					container
