@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>View PHP API Data in HTML using JavaScript</title>
+  </head>
+  <body>
+    <div id="data"></div>
+    <script>
+      fetch('http://localhost/php%20projects/oop/swproject/backend/api/doctor.info.php')
+        .then(response => response.json())
+        .then(data => {
+          // Display the data in the HTML page
+          const dataDiv = document.getElementById('data');
+          dataDiv.innerHTML = JSON.stringify(data);
+        })
+        .catch(error => {
+          // Handle any errors
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>
